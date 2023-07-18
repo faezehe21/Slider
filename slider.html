@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="slider.css" />
+    <title>Slider</title>
+  </head>
+  <body>
+    <main id="main">
+      <h1 class="header">Our Reviews</h1>
+      <section class="review-box">
+        <div class="customer-pic-container">
+          <img src="first.avif" alt="" id="customer-pic" />
+          <span class="quote-icon"
+            ><ion-icon name="chatbubbles-outline"></ion-icon
+          ></span>
+        </div>
+        <h3 id="customer-name" class="customer-name"></h3>
+        <p id="customer-job" class="customer-job"></p>
+        <p id="customer-review">
+        
+        </p>
+        <div class="button-container">
+          <div class="navigatotrs">
+            <button id="back-btn"><ion-icon name="chevron-back-outline"></ion-icon></button>
+            <button id="next-btn"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+          </div>
+          <button id="random-btn" class="random-btn" onclick="randomselect()">Surprise Me!</button>
+        </div>
+      </section>
+    </main>
+<script>
+
+const reviews = [
+    {
+     id:1,
+     name:'susan smith',
+     job: 'web developer',
+     img:'https://www.freepik.com/free-vector/abstract-hand-drawn-woman-portrait_12978838.htm#query=face%20woman&position=6&from_view=search&track=ais',
+     text:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus voluptatem ratione perspiciatis ab, dolor minus placeat quo quasi. Tempora, quae? Dolores delectus et sunt quis repudiandae! At alias beatae dignissimos.",
+
+
+
+    },
+{
+id: 2,
+    name:'anna johnson',
+    job: 'intern',
+    img:'https://www.freepik.com/free-vector/abstract-hand-drawn-woman-portrait_12978838.htm#query=face%20woman&position=6&from_view=search&track=ais',
+    text:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus voluptatem ratione perspiciatis ab, dolor minus placeat quo quasi. Tempora, quae? Dolores delectus et sunt quis repudiandae! At alias beatae dignissimos.',
+
+},
+  
+{
+    id: 3,
+    name:'peter jones',
+    job: 'web deigner',
+    img:'https://www.freepik.com/free-vector/abstract-hand-drawn-woman-portrait_12978838.htm#query=face%20woman&position=6&from_view=search&track=ais',
+    text:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus voluptatem ratione perspiciatis ab, dolor minus placeat quo quasi. Tempora, quae? Dolores delectus et sunt quis repudiandae! At alias beatae dignissimos.',
+
+
+   } ,
+
+   {
+    id: 4,
+    name:'bill anderson',
+    job: 'the boss',
+    img:'https://www.freepik.com/free-vector/abstract-hand-drawn-woman-portrait_12978838.htm#query=face%20woman&position=6&from_view=search&track=ais',
+    text:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus voluptatem ratione perspiciatis ab, dolor minus placeat quo quasi. Tempora, quae? Dolores delectus et sunt quis repudiandae! At alias beatae dignissimos.',
+
+
+   }, 
+  
+  ];
+
+
+   const userImag = document.getElementById('customer-pic');
+   const userName = document.getElementById('customer-name');
+   const userJob = document.getElementById('customer-job');
+   const userReview = document.getElementById('customer-review');
+   let currentUser = 0;
+const setSlideData =(userOne) => {
+  
+  // const user = reviews[]
+  const user =reviews[userOne];
+  userImag.src=userOne.img;
+userName.textContent=userOne.name;
+userJob.textContent=userOne.job;
+userReview.textContent=userOne.text;
+}
+
+  document.addEventListener(' DOMContentLoaded', function(){
+// const userOne =reviews[0];
+setSlideData(userOne);
+
+});
+document.getElementById('next-btn').addEventListener('click' , function(){
+  if(currentUser >=0 && currentUser < reviews.length-1 ){
+    currentUser++;
+    setSlideData(reviews[currentUser])
+  } else if(currentUser >=reviews.length-1) {
+    currentUser=0
+    setSlideData(reviews(currentUser));
+  }
+})
+
+document.getElementById('back-btn').addEventListener('click' , function(){
+  if(currentUser>0 ){
+    currentUser--;
+    setSlideData(reviews(currentUser));
+
+  } else{
+    currentUser = reviews.lenght -1 ;
+    setSlideData(reviews(currentUser));
+  }
+})
+const randomSelect = () => {
+  const randomNumber =  Math.floor(Math.random() * (reviews.lenght-1))
+  console.log(userNumber)
+  currentUser=randomNumber;
+  setSlideData(currentUser);
+}
+
+
+
+
+</script>
+
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

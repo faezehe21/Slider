@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    background-color: rgb(241, 245, 248);
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  #main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8%;
+  }
+  #main .header {
+    font-size: 2rem;
+    color: rgb(16, 42, 66);
+    padding: 8px 0;
+    margin-bottom: 16px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  #main .header::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 30px);
+    background-color: rgb(207, 105, 168);
+  }
+  #main .review-box {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 32px 0;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  #main .review-box .customer-pic-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+  }
+  #main .review-box .customer-pic-container > img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+  }
+  #main .review-box .customer-pic-container .quote-icon {
+    display: inline-flex;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color:rgb(207, 105, 168);
+    padding: 8px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #main .review-box .customer-pic-container::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgb(207, 105, 168);
+    position: absolute;
+    top: -5px;
+    left: 7px;
+  }
+  #main .review-box > p {
+    color: rgb(97, 125, 152);
+  }
+  #main .review-box .customer-name {
+    color: rgb(16, 42, 66);
+    padding: 8px 0 4px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+  }
+  #main .review-box .customer-job {
+   color:rgb(207, 105, 168);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+  #main .review-box .button-container {
+    margin-top: 24px;
+  }
+  #main .review-box .button-container .navigatotrs > button {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    color:rgb(240, 186, 219);
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin: 0 8px;
+    transition: color 0.4s;
+  }
+  #main .review-box .button-container .navigatotrs > button:hover {
+    color: rgb(207, 105, 168);
+  }
+  #main .review-box .button-container .random-btn {
+    margin-top: 16px;
+    border: 2px solid rgb(207, 105, 168);
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: rgb(235, 247, 255);
+    color: rgb(207, 105, 168);
+    transition: 0.4s;
+  }
+  #main .review-box .button-container .random-btn:hover {
+    background-color:rgb(207, 105, 168);
+    color: rgb(16, 42, 66);
+  }
